@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900');
+
+
+/*
+Copyright (c) Phil
+Released under the MIT license
+https://opensource.org/licenses/mit-license.php
+*/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff7ed;
+}
+
+$cardWidth: 379px;
+$cardHeight: 627px;
+.wrapper {
+	position: absolute;
+	margin: (-$cardHeight/2) 0 0 (-$cardWidth/2);
+	left: 50%;
+	top: 50%;
+	height: $cardHeight;
+	width: $cardWidth;
+}
+
+.card {
+	background-size: cover;
+	width: $cardWidth;
+	height: $cardHeight;
+	border-radius: 5px;
+	position: absolute;
+	box-shadow: 0px 0px 50px 0 rgba(92, 15, 15, 0.54);
+	overflow: hidden;
+	z-index: 4;
+	&__myimage {
+	  position: absolute;
+		width: 110vw;
+		height: 110vh;
+		bottom: 0px;
+
+		background-image: url(tako.png);
+		background-size: cover;
+		background-position: center;
+
+		filter: blur(30px);
+    top: -15px;
+    bottom: -15px;
+    left: -15px;
+    right: -15px;
+    
+	}
+	&__chara {
+	  position: absolute;
+		width: $cardWidth;
+		height: 100%;
+		bottom: 0px;
+		background-size: cover;
+		background-position: center;
+		z-index: 4;
+/* 		overflow: hidden; */
+		
+		img{
+		  position: absolute;
+		  width: $cardWidth;
+		  right: 0px;
+		  top: 120px;
+		  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+		}
+		
+		&__gold {
+	  position: absolute;
+    width: 387px;
+    height: 507px;
+		right: 0px;
+    top: 118px;
+    -webkit-mask: url('tako_mask.png');
+    -webkit-mask-size: 100% 100%;
+	  }
+  }
+  	&__text {
+    font-family: 'Montserrat', sans-serif;
+		text-align: center;
+		font-size: 50px;
+		line-height: 43px;
+		padding: 30px 0;
+		font-weight: 800;
+		position: relative;
+		z-index: 2;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+}
