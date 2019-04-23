@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #846844;
+}
+
+.wrapper {
+  position: absolute;
+  margin: -244px 0 0 -155px;
+  left: 50%;
+  top: 50%;
+  height: 488px;
+  width: 310px;
+}
+
+.card {
+  background-size: cover;
+  width: 310px;
+  height: 488px;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: 0px 0px 50px 0 rgba(30, 30, 30, 0.54);
+  overflow: hidden;
+  z-index: 4;
+}
+.card__myimage {
+  position: absolute;
+  width: 110vw;
+  height: 110vh;
+  bottom: 0px;
+}
+.card__chara {
+  position: absolute;
+  width: 310px;
+  height: 100%;
+  bottom: 0px;
+  top: 0px;
+  background-size: cover;
+  background-position: center;
+  z-index: 4;
+  overflow: hidden;
+}
+.card__chara__bg1 {
+  position: absolute;
+  max-height: 110%;
+  min-height: 110%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  filter: blur(1px);
+  transition: filter 0.6s;
+}
+.card__chara__bg2 {
+  position: absolute;
+  width: 240px;
+  max-height: 100%;
+  right: -50px;
+  top: -15px;
+  filter: blur(0.5px);
+  transition: filter 0.6s;
+}
+.card__chara__main {
+  position: absolute;
+  width: 341px;
+  max-height: 120%;
+  left: -5px;
+  right: 0px;
+  bottom: -15px;
+  filter: blur(4px);
+  transition: filter 0.6s;
+  z-index: 3;
+}
+.card__chara__eye {
+  position: absolute;
+  max-height: 65px;
+  left: 0px;
+  right: 25px;
+  top: 68px;
+  bottom: 0px;
+  margin: auto;
+  z-index: 5;
+  mix-blend-mode: overlay;
+  filter: blur(2px);
+  transition: filter 0.6s;
+}
+.card__chara__air {
+  position: absolute;
+  width: 310px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0px;
+  margin: auto;
+  filter: blur(5px);
+  transition: filter 0.6s;
+  mix-blend-mode: overlay;
+}
+.card__text {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 50px;
+  line-height: 43px;
+  padding: 30px 0;
+  font-weight: 400;
+  position: relative;
+  z-index: 6;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+}
+
+/*# sourceMappingURL=style.css.map */

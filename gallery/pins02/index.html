@@ -1,0 +1,95 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<div class="wrapper">
+	<div class="card">
+		<div class="card__chara">
+		  		  <img src='bg1.png' class="card__chara__bg1">
+            <img src='bg2.png' class="card__chara__bg2"> 
+            <img src='eye.png' class="card__chara__eye">
+            <img src='air.png' class="card__chara__air">
+            <img src='chara.png' class="card__chara__main">
+		</div>
+		
+	 <div class="card__text">
+	    Love
+    </div>
+	</div>
+	
+<script>
+  /*
+  Copyright (c) Phil
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+  */
+  
+const $card = document.querySelector('.card');
+const $text = document.querySelector('.card__text');
+const $bg1 = document.querySelector('.card__chara__bg1');
+const $bg2 = document.querySelector('.card__chara__bg2');
+const $main_chara = document.querySelector('.card__chara__main');
+const $eye = document.querySelector('.card__chara__eye');
+const $air = document.querySelector('.card__chara__air');
+
+clicked = true;
+
+const generateTranslate = (el, e, value) => {
+	el.style.transform = `translate(${e.clientX*value}px, ${e.clientY*value}px)`;
+}
+
+const blurElement = (el, size) => {
+    el.style.filter = `blur(${size}px)`;
+}
+
+document.onclick = (event) => {
+  if (clicked) {
+    blurElement($main_chara, 0);
+    blurElement($bg2, 4);
+    blurElement($eye, 0);
+    blurElement($air, 0);
+  } else {
+    blurElement($main_chara, 5);
+    blurElement($bg2, 0.5);
+    blurElement($eye, 2);
+    blurElement($air, 5);
+  }
+  clicked = !clicked
+}
+
+document.onmousemove = (event) => {
+
+	const e = event || window.event;
+	const x = (e.pageX - document.body.clientWidth / 2) * -1 / 100;
+	const y = (e.pageY - document.body.clientHeight / 2) * -1 / 100;
+
+  // カード自体の移動量(回転)
+	const matrix = [
+		[1, 0, 0, -x * 0.00005],
+		[0, 1, 0, -y * 0.00005],
+		[0, 0, 1, 1],
+		[0, 0, 0, 1]
+	];
+
+	generateTranslate($bg2, e, -0.05);
+	generateTranslate($bg1, e, -0.03);
+	generateTranslate($main_chara, e, -0.02);
+	generateTranslate($eye, e, -0.017);
+	generateTranslate($air, e, -0.05);
+	
+	// カード
+	$card.style.transform = `matrix3d(${matrix.toString()})`;
+	
+	// 反射
+  reflection_center = (e.pageX/document.body.clientWidth)*100;
+  
+  /*
+  Copyright (c) chilli con code
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+  */
+  const reflection_width = 6;
+  gold_line1 = `radial-gradient(ellipse farthest-corner at right bottom, transparent 0%, transparent ${reflection_center-6}%,#ffcc89 ${reflection_center-reflection_width/2}%, #ffcc89 ${reflection_center+reflection_width/2}%, transparent ${reflection_center+6}%, transparent 100%)`
+  $text.style.backgroundImage = gold_line1+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
+	
+}
+</script>
+</div>
