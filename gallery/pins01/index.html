@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
+<a href='../../top.html'>もどる</a>
 <div class="wrapper">
 	<div class="card">
     <div class="card__text">
@@ -15,6 +16,11 @@
 </div>
 
 <script>
+  /*
+  Copyright (c) Phil
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+  */
 const $circle = document.querySelector('.card__chara');
 const $text = document.querySelector('.card__text');
 const $card = document.querySelector('.card');
@@ -23,7 +29,6 @@ const $gold = document.querySelector('.card__chara__gold');
 const $pins = document.querySelector('.card__chara img');
 
 const generateTranslate = (el, e, value) => {
-  // JavaScriptからtransformを適用
 	el.style.transform = `translate(${e.clientX*value}px, ${e.clientY*value}px)`;
 }
 
@@ -71,10 +76,10 @@ document.onmousemove = (event) => {
   */
   const reflection_width = 6;
   gold_line1 = `radial-gradient(ellipse farthest-corner at right bottom, transparent 0%, transparent ${reflection_center-6}%,#ffcc89 ${reflection_center-reflection_width/2}%, #ffcc89 ${reflection_center+reflection_width/2}%, transparent ${reflection_center+6}%, transparent 100%)`
-  reflection_center = (e.pageX/document.body.clientWidth)*100;
+  reflection_center = (e.pageX/document.body.clientWidth)*130;
   gold_line2 = `radial-gradient(ellipse farthest-corner at right bottom, transparent 0%, transparent ${reflection_center-6}%,#ffcc89 ${reflection_center-reflection_width/2}%, #ffcc89 ${reflection_center+reflection_width/2}%, transparent ${reflection_center+6}%, transparent 100%)`
   $gold.style.background = gold_line1+", "+gold_line2+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
-  $text.style.backgroundImage = gold_line1+", "+gold_line2+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
+  $text.style.backgroundImage = gold_line1+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
 
 }
 </script>
