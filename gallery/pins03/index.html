@@ -1,0 +1,90 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<a href='../../top.html'>もどる</a>
+<div class="wrapper">
+	<div class="card">
+    <div class="card__text">
+	    KAWAII! KAWAII! KAWAII!
+    </div>
+		<div class="card__myimage"></div>
+	</div>
+	
+  <div class="card__chara">
+		  <img src='pins03_bg-min.png' id='main_img'>
+		  <div class="card__chara__gold"></div>
+  </div>
+</div>
+
+<script>
+  window.onload = function () {
+    init()
+  };
+
+  /*
+  Copyright (c) Phil
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+  */
+const $circle = document.querySelector('.card__chara');
+const $text = document.querySelector('.card__text');
+const $card = document.querySelector('.card');
+const $myimage = document.querySelector('.card__myImage');
+const $gold = document.querySelector('.card__chara__gold');
+const $pins = document.querySelector('.card__chara img');
+
+const generateTranslate = (el, e, value) => {
+	el.style.transform = `translate(${e.clientX*value}px, ${e.clientY*value}px)`;
+}
+
+document.onmousemove = (event) => {
+	const e = event || window.event;
+	const x = (e.pageX - document.body.clientWidth / 2) * -1 / 100;
+	const y = (e.pageY - document.body.clientHeight / 2) * -1 / 100;
+
+  // カード自体の移動量(回転)
+	matrix = [
+		[1, 0, 0, -x * 0.00005],
+		[0, 1, 0, -y * 0.00005],
+		[0, 0, 1, 1],
+		[0, 0, 0, 1]
+	];
+
+	generateTranslate($text, e, 0.00);
+	generateTranslate($myimage, e, -0.05);
+	generateTranslate($pins, e, 0.03);
+	generateTranslate($gold, e, 0.03);
+	
+	// カード
+	$card.style.transform = `matrix3d(${matrix.toString()})`;
+	
+	matrix = [
+		[1, 0, 0, -x * 0.00005],
+		[0, 1, 0, -y * 0.00005],
+		[0, 0, 1, 1],
+		[0, 0, 0.1, 1]
+	  ];
+	  
+	$pins.style.transform = `matrix3d(${matrix.toString()})`;
+	$gold.style.transform = `matrix3d(${matrix.toString()})`;
+	
+	// ピンズシャドー
+	$pins.style.filter = `drop-shadow(${x*2}px ${y*2}px 2px rgba(0,0,0,0.6))`;
+	
+	// 反射
+  reflection_center = (e.pageX/document.body.clientWidth)*100;
+  
+  /*
+  Copyright (c) chilli con code
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+  */
+  const reflection_width = 6;
+  gold_line1 = `radial-gradient(ellipse farthest-corner at right bottom, transparent 0%, transparent ${reflection_center-6}%,#ffcc89 ${reflection_center-reflection_width/2}%, #ffcc89 ${reflection_center+reflection_width/2}%, transparent ${reflection_center+6}%, transparent 100%)`
+  reflection_center = (e.pageX/document.body.clientWidth)*130;
+  gold_line2 = `radial-gradient(ellipse farthest-corner at right bottom, transparent 0%, transparent ${reflection_center-6}%,#ffcc89 ${reflection_center-reflection_width/2}%, #ffcc89 ${reflection_center+reflection_width/2}%, transparent ${reflection_center+6}%, transparent 100%)`
+  $gold.style.background = gold_line1+", "+gold_line2+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
+  $text.style.backgroundImage = gold_line1+",radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FEDB37 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%)";
+
+}
+</script>
+</div>
