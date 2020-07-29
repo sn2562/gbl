@@ -59,9 +59,10 @@ body {
 }
 .card__chara__gold {
   position: absolute;
-  width: 679px;
-  right: auto;
-  top: auto;
+  width: 387px;
+  height: 507px;
+  right: 0px;
+  top: 118px;
   -webkit-mask: url("pins03_mask-min.png");
   -webkit-mask-size: 100% 100%;
 }
