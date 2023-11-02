@@ -1,7 +1,1 @@
-# 以下の名前のフォルダすべて
-*dev/
-*origin/
-# 以下のファイル名を含むものすべて
-*dev*
-*origin*
-*origin*
+.DS_Store
