@@ -107,7 +107,6 @@ footer{
     text-align: left;
     padding:10;
     margin-right: 4px;
-
     user-select: none; /* CSS3 */
     -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari、Chromeなど */
@@ -116,6 +115,7 @@ footer{
 
 .gallery img{
     height: 60px;/*大きさの指定*/
+    margin-bottom: 3px;
 }
 .appgallery{
 }
@@ -127,6 +127,7 @@ footer{
     height: 65px;/*大きさの指定*/
     margin-left: -4px;
     margin-right: 0px;
+    margin-bottom: 4px;
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
@@ -202,13 +203,22 @@ img#imagelightbox{
     display: inline-block;
     box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
+    margin-top: 130px; /*  固定headerの分余分にずらす  */
 
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-font-smoothing: none;
     -webkit-font-smoothing: antialiased;
     -webkit-font-smoothing: subpixel-antialiased; /* Safari での Default値 */
+}
+
+div.imagelightbox-caption{
+    background-color: #222;
+}
+
+.lightbox {
+  margin: 0 auto;
 }
 
 .disabledImg {
