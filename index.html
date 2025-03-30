@@ -74,12 +74,15 @@
 
     ga('create', 'UA-63051473-1', 'auto');
     ga('send', 'pageview');
+
+    // 右クリックOFF
+    document.body.oncontextmenu = function () {return false;}
     </script>
 
 </head>
 
 <!-- ▼body -->
-<body>
+<body oncontextmenu="return false;">
     <div id="bgWrap">
     <div class="centerB">
         <a href="top.html">

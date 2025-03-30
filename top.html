@@ -24,7 +24,7 @@
 </head>
 <!-- ▼body -->
 <!--	<body>-->
-<body class="home-background">
+<body class="home-background" oncontextmenu="return false;">
     <div id="bgWrap">
         <div id="gloss"></div>
     </div>
@@ -32,10 +32,10 @@
     <header>
         <a><img src="img/header-2024-black.png" ></a>
         <div id="nav" class="row">
+            | <a href='#' data-glide-trigger='#Carousel' data-glide-dir='=1'>⚫︎</a>|
             <a href='#' data-glide-trigger='#Carousel' data-glide-dir='=2'>INFO</a>｜
             <a href='#' data-glide-trigger='#Carousel' data-glide-dir='=3'>GALLERY</a>｜
             <a href='#' data-glide-trigger='#Carousel' data-glide-dir='=4'>WORKS</a>｜
-            <a href='#' data-glide-trigger='#Carousel' data-glide-dir='=1'>⚫︎</a>
             <!-- <a href="http://sn2562.tumblr.com" target="_blank">MINIBLOG<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a> -->
         </div>
     </header>
@@ -44,7 +44,7 @@
         <dl class="HeterocongerHassi">
             <dt><img src="img/myicon-202404-black.png"></dt>
             <div class="HeterocongerHassi_text">
-                <dd>▼last updated 2024.4.30</dd>
+                <dd>▼last updated 2025.3.25</dd>
                 <dd>&#x25BD;illust by sn2562</dd>
             </div>
         </dl>
@@ -79,7 +79,7 @@
                             <dt>owner</dt>
                             <dd>sn2562</dd>
                             <dt>Banner</dt>
-                            <dd><img src="img/banner.jpg" class="clickable"></dd>
+                            <dd><img src="img/banner.jpg" class="clickable" oncontextmenu="return true;"></dd>
                             <!-- <dt>mail</dt> -->
                             <!-- <dd>goodbyeland777 AT gmail.com</dd> -->
                             <!-- <dt><img src="./img/icons/twitter.png" class="gl_icon">X(twitter)</dt> -->
@@ -123,6 +123,9 @@
                         <h4 class="mg">GALLERY</h4>
                         <!-- <h5>ILLUSTS</h5> -->
                         <div class="gallery img_gallery">
+                            <!-- 2025 -->
+                            <img src="https://placehold.jp/17/aaaaaa/ffffff/169x72.jpg?text=2025" class="img-thumbnail disabledImg">
+                            <a href="gallery/img/p2025_01.png" data-ilb2-caption="hoge" class="gImg"></a>
                             <!-- 2024 -->
                             <img src="https://placehold.jp/17/aaaaaa/ffffff/169x72.jpg?text=2024" class="img-thumbnail disabledImg">
                             <a href="gallery/img/p80.png" data-ilb2-caption="イマ•イマーシブ(citrus×clover underground) 楽曲イメージイラスト" class="gImg"></a>
@@ -296,6 +299,9 @@
         });
 
     });
+
+    // 右クリックOFF
+    document.body.oncontextmenu = function () {return false;}
     </script>
 </body>
 <!-- ▲body -->
